@@ -7,20 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Swagger 配置
-swagger_config = {
-    "headers": [],
-    "specs": [
-        {
-            "endpoint": 'apispec',
-            "route": '/apispec.json',
-            "rule_filter": lambda rule: True,
-            "model_filter": lambda tag: True,
-        }
-    ],
-    "swagger_ui": True,
-    "specs_route": "/docs/"
-}
-Swagger(app, config=swagger_config)
+Swagger(app)
 
 # 注册蓝图
 from api.video import video_bp
